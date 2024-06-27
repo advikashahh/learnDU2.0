@@ -1,0 +1,279 @@
+.nav_link{
+  color: #000;
+}
+
+.main a .bi{
+   color: orange;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+
+
+.openingcontent{
+padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: black;
+
+
+}
+
+@media (min-width:0px) and (max-width:600px){
+  .openingcontent{padding-top: 20px;}
+}
+
+.openingcontent .l1{
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  text-align:center;
+}
+
+
+.openingcontent .img{
+
+ width: 450px;
+margin-top: 20px;
+margin-bottom: 30px;
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+
+.openingcontent .img img{
+width: 100%;
+margin-left: -1px;
+border-top-right-radius: 130px;
+border-bottom-left-radius:50px ;
+border-top-left-radius: 200px;
+
+}
+
+@media (min-width:0px) and (max-width:700px){
+  .openingcontent .img{width:300px}
+}
+
+
+
+
+
+
+
+
+
+
+ .register .nav-tabs .nav-link:hover{
+                border: none;
+              
+            }
+            #fstelename{
+                margin-top: -5px;
+               
+            }
+
+            .container_register{
+                margin-top: 20px;
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: center;
+                 margin-bottom: 30px;
+            }
+       
+           
+          
+            .form-new{
+                width: 50vw;
+                border: 2.5px solid orange;
+                padding: 4%;
+                min-width: 500px;
+
+            }
+
+            @media (min-width:0px) and (max-width:700px){
+                .form-new{width:90vw;
+                  min-width: 250px;}
+            }
+
+            .inputname{
+            margin-top: 30px;
+           font-size: 18px;
+    
+            }
+            
+            .register{ 
+                margin-top: 3%;
+                padding: 3%;
+                border-radius: 2.5rem;
+            }
+            .btnSubmit
+            {
+                background-color:orange;
+                color: rgb(0, 0, 0);
+                border: none;
+                padding: 0.5rem 1.5rem;
+                font-size:17px ;
+                font-weight: 500;
+                margin-top: 20px;         
+                max-width: 150px;
+                margin-left: auto;
+                margin-right: auto;
+                              
+            }
+
+            .btnSubmit:hover
+            {
+            background-color: rgb(255, 255, 255);
+           border: 2px solid orange;
+           color: black;
+                
+            }
+
+
+
+
+
+
+            .container2heading{
+              margin-top: 70px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 30px;
+            }
+
+            .container2heading .l1{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 35px;
+              font-weight: 517;
+              width: 50%;
+              max-width: 600px;
+              border-bottom: 5px solid orange;
+            }
+
+            @media (min-width:0px) and (max-width:500px){
+              .container2heading .l1
+              {   font-size: 7vw;
+                width: 70%;
+              max-width: 400px;}
+          }
+
+            .container2{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 70px;
+            }
+
+
+            .container2 .box1{ 
+              padding-top: 20px;
+              padding-bottom: 20px;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+              align-items: center;
+              background-color: rgb(255, 202, 111);
+              border-top-left-radius: 300px;
+              border-bottom-right-radius: 300px;
+          
+
+            }
+
+            @media (min-width:0px) and (max-width:600px){
+              .container2 .box1{width:70vw}
+          }
+
+            .container2 .box1 .box1_1{
+              width: 200px;
+              height: 200px;
+          
+          border: 6px solid rgb(255, 202, 111);
+              display: flex;
+              justify-content: center;
+                align-items: center;
+                background-color: rgb(255, 255, 255);
+               border-radius: 50%;
+            
+  
+              }
+
+
+              
+              .container2 .box1 .box1_1 a button
+              {
+                  background-color:orange;
+                  color: rgb(0, 0, 0);
+                  border: none;
+                  padding: 0.4rem 1.2rem;
+                  font-size:17px ;
+                  font-weight: 500;       
+                  max-width: 150px;
+                  margin-left: auto;
+                  margin-right: auto;
+                                
+              }
+  
+              .container2 .box1 .box1_1 a button:hover
+              {
+              background-color: rgb(255, 255, 255);
+             border: 2px solid orange;
+             color: black;
+                  
+              }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

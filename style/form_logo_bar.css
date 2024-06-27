@@ -1,0 +1,415 @@
+
+
+
+
+
+
+
+
+.con-contact-form{
+    z-index: 1000000;
+    position: relative;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 500px;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      /* box-shadow: 2px 3px 5px 2px rgb(214, 214, 214); */
+      background-color: rgb(243, 255, 255);
+  
+    
+  }
+  
+  
+  
+  .box-form{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* padding-top: 30px; */
+      padding-bottom: 30px;
+      background-color: #ffffff;
+  
+    
+  
+  }
+  
+  
+  
+  #overlay {
+              display: none;
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.75);
+              z-index: 3;
+          }
+  
+          .con-form {
+              display: none;
+              /* display: flex; */
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+  background-color: while;
+              width: 100vw;
+           
+              z-index: 4;
+  
+          
+          }
+  
+          @media (min-width:0px) and (max-width:600px){
+              .con-form {
+                  top: 47%;
+  
+          }}
+  
+          .con-contact-form .label{
+  
+            width: 90%;
+  
+  color: #ffffff;
+  display: flex;
+  
+  background-color: #003054;
+  justify-content: center;
+  align-items: center;
+  font-size: 18.5px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     text-transform: uppercase;
+          padding: 20px ;
+          margin-bottom: 10px;
+          }
+  
+      .con-contact-form .mb-3{
+          margin-left: 30px;
+          margin-right: 30px;
+          font-size: 16px;
+          padding: 6px ;
+       
+      }
+  
+      @media (min-width:0px) and (max-width:800px){
+        .con-contact-form .mb-3{
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-top: 5px;
+          padding: 0px ;
+  
+          }}
+      /* .......sub-titles/// */
+      .con-contact-form  .form-label{
+          font-size: 15px;
+  
+          text-transform: uppercase;
+      }
+  
+             
+    @media (min-width:0px) and (max-width:800px){
+    .con-contact-form  .form-label{
+      font-size: 13px;
+  
+          }}
+      .con-contact-form  input{
+        height: 30px;
+          border: none;
+          width: 100%;
+          border: 1px solid rgb(201, 201, 201);
+          outline: none;
+          color: #777777;
+          padding-left: 7px;
+      }
+  
+      @media (min-width:0px) and (max-width:800px){
+        .con-contact-form  input{
+          height: 24px;
+          padding-left: 4px;
+  
+          }}
+      .con-contact-form  input:focus{
+          border: 1px solid rgb(201, 201, 201);
+          background-color: rgb(244, 252, 255);
+          outline: none;
+          
+      }
+  
+  
+      .con-contact-form  .btn{
+  
+        background-color: #003054;
+        border: 2px solid  #003054;
+          display: flex;
+  
+          border-radius: 0px;
+          justify-content: center;
+          align-items: center;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 20px;
+          font-size: 15px;
+          padding: 7.5px 20px;
+          border-radius: 17px;
+          text-transform: uppercase;
+          color: #f8fff9;
+      }
+  
+  
+      @media (min-width:0px) and (max-width:800px){
+        .con-contact-form  .btn{
+          font-size: 13px;
+          padding: 6px 17px;
+          border-radius: 12px;
+  
+          }}
+    
+  
+      .con-contact-form  .btn:hover{
+        background-color:#ffffff;
+        color:  #003054;
+        transition: .2s linear;
+      }
+  
+  
+      .con-contact-form  #cross-f-btn{
+        border: none;
+        background-color: #fffbf6;
+        color:  #003054;
+        font-size: 18px;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    transition: .2s linear;
+  
+      }
+      @media (min-width:0px) and (max-width:800px){
+          .con-contact-form  #cross-f-btn{
+              font-size: 14px;
+   width: 18px;
+   height: 18px;
+  
+  
+          }}
+    
+  
+  
+      .con-contact-form  #cross-f-btn:hover{
+    background-color: #ff7a68;
+        color:  #003054;
+  
+      }
+     
+    
+  
+  
+      #contact_us{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      }
+  
+  
+     
+      .radio-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .radio-options label {
+      font-size: 16px;
+      display: inline-block;
+      cursor: pointer;
+  }
+  @media (min-width:0px) and (max-width:800px){
+      .radio-options label{
+              font-size: 13px;
+  
+  
+  
+          }}
+    
+  
+  .radio-options input[type="radio"] {
+      display: none;
+  }
+  
+  .radio-options input[type="radio"] + label:before {
+      content: '';
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #003054;
+      border-radius: 50%;
+      margin-right: 10px;
+      vertical-align: middle;
+      cursor: pointer;
+  }
+  
+  .radio-options input[type="radio"]:checked + label:before {
+      background-color: #003054;
+  }
+  
+  .radio-options input[type="radio"] + label:after {
+      content: '';
+      display: none;
+  }
+  
+  .radio-options input[type="radio"]:checked + label:after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* //////////fixed-contact logos////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+  
+  .fixed-logos, .fixed-logos2 {
+      border: .8px solid #003054;
+      width: 60px;
+      height: 60px;
+      z-index: 2;
+      display: flex;
+      position: fixed;
+    
+      background-size: 60px 60px;
+      bottom: 80px;
+      right: 20px;
+      border-radius: 50%;
+  }
+  
+  .fixed-logos img, .fixed-logos2 img{
+      width: 100%;
+      height: 100%;
+  }
+  
+  .fixed-logos2 {
+  
+      bottom: 150px;
+  }
+  
+  
+  
+  @media (min-width: 0px) and (max-width: 700px) {
+      .fixed-logos2 {
+          bottom: 130px;
+      }
+  
+      .fixed-logos,
+      .fixed-logos2 {
+          width: 37px;
+          height: 37px;
+          background-size: 37px 37px;
+      }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* ///////fixed-call-box////////////////////////////////////////////////////////////////////////////////////////////////// */
+  .fixed-call-box{
+      z-index: 5;
+      position: fixed;
+      height:70px ;
+    width: 100vw;
+    background-color:#2292d2;
+  display: flex;
+  bottom: 0;
+  padding: 0px 60px;
+  align-items: center;
+  justify-content: space-between;
+  
+  
+  }
+  
+  @media (min-width: 0px) and (max-width: 700px) {
+      .fixed-call-box{
+          padding: 0px 15px;
+          height:60px ;
+      }
+  }
+  .fixed-call-box h3{
+      margin-top: 10px;
+     font-size: 18px;
+     color: rgb(255, 255, 255, .2);
+      font-family: 'Nunito', sans-serif;
+      
+  }
+  
+  @media (min-width: 0px) and (max-width: 700px) {
+      .fixed-call-box h3{
+          font-size: 14px;
+      }
+  }
+  .fixed-call-box button{
+      width: 150px;
+      height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: white;
+   color: #003054;
+   border: none;
+   font-family: 'Nunito', sans-serif;
+   border-radius: 5px;
+   transition: .2s linear;
+  
+  }
+  
+  @media (min-width: 0px) and (max-width: 700px) {
+    .fixed-call-box button{
+        width: 120px;
+    height: 30;
+    font-size:15px ;
+    }
+  }
+  
+  
+  
+      .fixed-call-box button:hover{
+        background-color: #c9e8ff;
+      }
+  
+  
+  
+  
