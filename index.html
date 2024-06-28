@@ -200,18 +200,32 @@
                 <button class="btn" id="sign_up_btn"><i class="animation"></i>Create Account<i class="animation"></i></button>
                 <p>Already have an account? <span id="showLogin">Login</span></p>
             </div>
-        </div>
+            <div id="logoutForm" class="form-content" style="display: none;">
+                <h2>Welcome, User!</h2>
+                <button class="btn" id="logout_btn"><i class="animation"></i>Logout<i class="animation"></i></button>
+            </div>
+       </div>
     </div>
     
     <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const logoutForm = document.getElementById('logoutForm');
+
+
         // Function to show the login popup
         document.getElementById('loginBtn').addEventListener('click', function() {
             document.getElementById('popupOverlay').style.display = 'flex';
+            showLoginForm();
         });
     
         // Function to close the popup
         document.getElementById('closeBtn').addEventListener('click', function() {
             document.getElementById('popupOverlay').style.display = 'none';
+            hideAllForms();
         });
     
         // Function to switch to the signup form
@@ -247,7 +261,7 @@
             }
     
             try {
-                const response = await fetch('/api/user', {
+                const response = await fetch('http://localhost:4001/api/user/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -287,7 +301,7 @@
             const password = document.getElementById('loginPassword').value;
     
             try {
-                const response = await fetch('/user/login', {
+                const response = await fetch('http://localhost:4001/api/user/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -308,6 +322,37 @@
                 console.error('Error logging in:', error);
                 alert('Login failed. Please try again.');
             }
+            
+             // Function to handle logout
+    document.getElementById('logout_btn').addEventListener('click', function() {
+        hideAllForms();
+        showLoginForm(); // Show login form after logout
+    });
+
+    // Helper functions
+    function hideAllForms() {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'none';
+        logoutForm.style.display = 'none';
+    }
+
+    function showLoginForm() {
+        hideAllForms();
+        loginForm.style.display = 'block';
+    }
+
+    function showLogoutForm() {
+        hideAllForms();
+        logoutForm.style.display = 'block';
+    }
+
+    function clearSignupForm() {
+        document.getElementById('signupName').value = '';
+        document.getElementById('signupEmail').value = '';
+        document.getElementById('signupPassword').value = '';
+        document.getElementById('signupConfirmPassword').value = '';
+    }
+});
         });
     </script>
     
@@ -611,9 +656,9 @@
                 const confirmPassword = document.getElementById('signupConfirmPassword').value;
         
                 console.log('Signup button clicked');
-                console.log(`Full Name: ${fullName}, Email: ${email}, Password: ${password}, Confirm Password: ${confirmPassword}`);
+                console.log(`Full Name: ${fullname}, Email: ${email}, Password: ${password}, Confirm Password: ${confirmPassword}`);
         
-                if (!fullName || !email || !password || !confirmPassword) {
+                if (!fullname || !email || !password || !confirmPassword) {
                     alert('Please fill in all fields');
                     return;
                 }
@@ -630,7 +675,7 @@
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({ 
-                            fullName: fullName,
+                            fullname: fullname,
                             email: email,
                             password: password
                         })
