@@ -61,8 +61,6 @@
 
     }
 
-
-
     .box {
         opacity: 0;
         transition: opacity 1s ease-in-out; 
@@ -191,7 +189,7 @@
 </script>
  <!--Google login api-->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">  <!--googlw signin-->
+  <meta name="google-signin-client_id" content="787801094348-bjfrau4aeo6f1ruo76bkhp6opvglcudq.apps.googleusercontent.com.apps.googleusercontent.com">  <!--googlw signin-->
 
   
     <!--LOGIN/SIGNUP Page-->
@@ -253,6 +251,47 @@
     <script>
 
 document.addEventListener('DOMContentLoaded', function() {
+
+      
+    // let isLoggedIn = false; // Initially not logged in
+
+// Function to toggle login/logout forms based on login status
+// function toggleForms() {
+//     const loginForm = document.getElementById('loginForm');
+//     const signupForm = document.getElementById('signupForm');
+//     const forgotPassContainer = document.getElementById('forgotPassContainer');
+//     const containerAcCreated = document.getElementById('container-ac-created');
+//     const logoutForm = document.getElementById('logoutForm');
+
+//     if (isLoggedIn) {
+//         loginForm.style.display = 'none';
+//         signupForm.style.display = 'none';
+//         forgotPassContainer.style.display = 'none';
+//         containerAcCreated.style.display = 'none';
+//         logoutForm.style.display = 'block';
+//     } else {
+//         loginForm.style.display = 'block';
+//         signupForm.style.display = 'none';
+//         forgotPassContainer.style.display = 'none';
+//         containerAcCreated.style.display = 'none';
+//         logoutForm.style.display = 'none';
+//     }
+// }
+
+// // Example function to simulate login action
+// function login() {
+//     isLoggedIn = true;
+//     toggleForms();
+// }
+
+// // Example function to simulate logout action
+// function logout() {
+//     isLoggedIn = false;
+//     toggleForms();
+// }
+
+// // Call toggleForms() initially or whenever login status changes
+// toggleForms();
 
         // Function to show the login popup
         document.getElementById('loginBtn').addEventListener('click', function() {
@@ -357,19 +396,20 @@ document.addEventListener('DOMContentLoaded', function() {
         body: JSON.stringify({ email, password })
       });
 
-      const data = await response.json();
       if (response.ok) {
-        alert('Login successful');
-        const token = await response.json();
-                localStorage.setItem('token', token); // store the token in local storage
-        window.location.href = "profile.html"; // Replace with your home page URL
+        const data = await response.json();
+        console.log('Token received:', data.token); // Log the received token
+        localStorage.setItem('token', data.token); // Store token in local storage
+        console.log('Token stored in local storage:', localStorage.getItem('token')); // Verify storage
+        window.location.href = "./profile.html"; // Redirect to profile page
       } else {
         alert(data.message);
         console.error('Failed to login');
       }
     });
 
-    document.getElementById('forget_pass').addEventListener('click', function () {
+    //forgetpassword
+  document.getElementById('forget_pass').addEventListener('click', function () {
   document.getElementById('forgotPassContainer').style.display = 'block';
 });
 
@@ -381,8 +421,10 @@ document.getElementById('resetPasswordBtn').addEventListener('click', async func
     return;
   }
 
+  console.log('Email entered:', email);
 
-    const response = await fetch('http://localhost:5000/api/auth/forgot-password', {
+  try {
+    const response = await fetch('http://localhost:4001/api/user/forgot-password', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -390,29 +432,38 @@ document.getElementById('resetPasswordBtn').addEventListener('click', async func
       body: JSON.stringify({ email })
     });
 
+    console.log('Fetch response:', response);
+
     const data = await response.json();
+    console.log('Response data:', data);
+
     if (response.ok) {
       alert('Password reset link sent to your email');
     } else {
       alert(data.message);
     }
-  });
+  } catch (error) {
+    console.error('Error fetching:', error);
+    alert('Failed to send password reset link. Please try again later.');
+  }
+});
 
-    // Logout button event listener
-    document.getElementById('logout').addEventListener('click', function () {
-      localStorage.removeItem('token');
-      window.location.href = 'login.html'; // Replace with login page URL
-    });
+// Logout button event listener
+document.getElementById('logout_btn').addEventListener('click', function () {
+  localStorage.removeItem('token');
+  window.location.href = 'login.html'; // Replace with login page URL
+});
 
-    // Check if user is logged in
-    document.addEventListener('DOMContentLoaded', function () {
-      const token = localStorage.getItem('token');
-      if (token) {
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('signupForm').style.display = 'none';
-        document.getElementById('logout').style.display = 'block';
-      }
-    });
+// Check if user is logged in
+document.addEventListener('DOMContentLoaded', function () {
+  const token = localStorage.getItem('token');
+  if (token) {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('logout').style.display = 'block';
+  }
+});
+
 
     // Google Sign-In success handler
 async function onSignIn(googleUser) {
@@ -420,7 +471,7 @@ async function onSignIn(googleUser) {
   const id_token = googleUser.getAuthResponse().id_token;
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/google', {
+    const response = await fetch('http://localhost:4001/api/user/google', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -746,6 +797,10 @@ async function onSignIn(googleUser) {
   align-items: center;
   display: inline-flex;
 }
+
+#logoutForm {
+        display: none;
+    }
         </style>
         
                     

@@ -294,13 +294,28 @@ width: 100px;
        <button class="button_ads">My Purchases</button>
     
     </div> 
-    <button class="log_out">Log Out</button>
+    <button id="logoutButton" class="log_out">Log Out</button>
         </div>
     </div>
 </div>
 
 
 <script>
+
+     // Function to clear session data and redirect to login page
+     function logout() {
+        // Clear session data (example using localStorage)
+        localStorage.removeItem('Token', data.token); 
+
+        // Redirect to login page
+        window.location.href = "./index.html"; 
+    }
+
+    // Attach click event listener to the logout button
+    document.getElementById("logoutButton").addEventListener("click", function() {
+        logout();
+    });
+
     document.addEventListener('DOMContentLoaded', async () => {
         const token = localStorage.getItem('token'); // assuming you stored the token in local storage after login
         if (token) {
@@ -323,7 +338,7 @@ width: 100px;
                 console.error('Error fetching user data:', error);
             }
         } else {
-            window.location.href = 'index.html'; // redirect to login page if no token is found
+            window.location.href = './index.html'; // redirect to login page if no token is found
         }
     });
 </script>
