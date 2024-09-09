@@ -1,0 +1,445 @@
+/* <!-- loading bar////////////// --> */
+
+.loading-bar-container{
+    width: 100vw;
+    height: 100vh;
+display:flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+z-index: 10;
+background-color: rgb(0, 0, 0, .7);
+top: 0px;
+display: none;
+  }
+
+.loader {
+position: relative;
+  width: 350px;
+  height: 180px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+.loading {
+  width: 100%;
+  height: 10px;
+  background: rgb(255, 232, 214);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 10px;
+  background: orange;
+  border-radius: 10px;
+  z-index: 1;
+  animation: loading 0.6s alternate infinite;
+}
+
+
+@keyframes loading {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 70%;
+  }
+  0% {
+    left: -25%;
+  }
+}
+
+
+
+
+
+
+/* <!-- //////fliter-radio-buttons//////// --> */
+
+   
+   input[type="radio"]:checked + .radio-text {
+border-bottom: 2px solid orange;
+
+}
+  
+   .all-Category-btn{
+    width: 100%;
+    margin-top: 100px;
+   }
+   .form-container p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+   }
+  
+    .all-Category-btn-sub {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    @media (min-width: 0px) and (max-width: 600px) {
+        .all-Category-btn-sub {
+     justify-content: left;
+     align-items: left;
+     text-align: left;
+           }
+   }
+   
+    .all-options-btn-container {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .all-options-btn-container .option-container {
+        display: none;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+
+
+    }    @media (min-width: 0px) and (max-width: 600px) {
+        .all-options-btn-container .option-container {
+            margin-bottom: px;
+font-size: 17px;
+padding: 10px 10px;
+width: 250px;
+display: none;
+justify-content: left;
+align-items: center;
+border: 1px solid rgb(209, 209, 209);
+border-bottom: 1px solid  rgb(209, 209, 209);;
+           }
+   }
+
+    .all-options-btn-container .option-radio-text{
+    padding :10px 20px;
+    margin-right: 20px;
+}
+
+ input[type="radio"]:checked + .option-radio-text {
+border-bottom: 2px solid orange;
+
+}
+
+   
+    .all-options-btn-container .option-container label {
+margin-bottom: 10px;
+margin-top: 10px;
+font-size: 17px;
+    }
+
+    .option-container {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .radio-button {
+        appearance: none;
+        border: 2px solid orange;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        outline: none;
+        margin-right: 10px;
+    }
+    .option-container-radio-btn, .subject-container-radio-btn {
+        appearance: none;
+        border: 2px solid orange;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        outline: none;
+        margin-right: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+
+    }
+  
+    
+    input[type="radio"]:checked {
+        border: 6px solid orange;
+    }
+
+    .radio-label {
+        display: flex;
+        align-items: center;
+
+    
+    }
+    .radio-label .radio-text{
+        padding: 7px 15px;
+        border-radius: 7px;
+    }
+    input[type="radio"]:checked + .radio-text {
+  background-color: orange;
+  color: white;
+  border: 2px;
+
+}
+
+
+.subject-container {
+    display: none;
+        flex-direction: column;
+justify-content: center;
+align-items: center;
+  
+  width: 100%;
+        margin-top: 15px;
+
+ 
+}
+.subject-container label{
+    margin-bottom: px;
+font-size: 17px;
+padding: 10px 10px;
+width: 250px;
+display: flex;
+justify-content: left;
+border: 1px solid rgb(209, 209, 209);
+border-bottom: .5px solid  rgb(209, 209, 209);;
+
+}
+
+
+
+.radio-text {
+  font-size: 1rem;
+  color: #606060;
+  transition: color 0.15s ease-in-out;
+  margin-right: 40px;
+  font-size: 20px;
+}
+
+
+
+.form-submit-btn button {
+padding: 10px 20px;
+}
+
+
+
+
+
+
+    .all-category-books{
+        width: 100vw;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        border: 2px solid red;
+        margin-top: 50px;
+        flex-direction: column;
+    }
+
+
+    .category-container{
+width: 90%;
+border: 2px solid yellow;
+padding: 20px 0px;
+    }
+.subjects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+       flex-wrap: wrap;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid magenta;
+        }
+        .book {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .book img {
+            width: 100%;
+            height: 270px;
+            border: 2px solid red;
+        }
+        .book-details {
+            padding: 10px;
+        }
+        .book-details a {
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .price {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background: #f2f2f2;
+            align-items: center;
+        }
+        .price span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .price a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .book {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-left a, .nav-right a {
+                font-size: 12px;
+            }
+
+          
+            .book {
+                width: 90%;
+            }
+        }
+
+       
+        .commerce-books-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          gap: 10px;
+      }
+      
+      .book-container {
+          background-color: #ffffff;
+          border: 1px solid #cccccc;
+          border-radius: 5px;
+          width: 220px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
+        
+        
+      }
+      
+      .book-image {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          border-bottom: 1px solid #cccccc;
+      }
+      
+      .book-details {
+          padding: 10px;
+      }
+      
+      .book-title {
+          font-size: 16px;
+          font-weight: 500;
+          margin: 10px 0;
+          text-align: center;
+      }
+      
+      .seller-college {
+          font-size: 14px;
+          text-align: center;
+      }
+      
+      .details-button {
+          display: flex;
+          text-align: center;
+          background-color: #ffffff;
+          padding: 10px;
+      
+          text-decoration: none;
+          border-radius: 5px;
+      
+      
+      }
+      
+      .price-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #ffffff;
+          border-top: 1px solid #ffffff;
+          width: 100%;
+          border-top: 2px solid rgb(210, 210, 210);
+      
+      }
+      
+      .price {
+          font-size: 16px;
+          font-weight: bold;
+          width: 50px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          background-color: #ffffff;
+          color: red;
+      
+      
+      
+      }
+      
+      .purchase-button {
+          background-color: #90ee90;
+          width: 60%;
+      height: 50px;
+          display: flex;
+      justify-content: center;
+      align-items: center;
+          text-decoration: none;
+      }
+      
+      @media screen and (max-width: 768px) {
+          .book-title {
+              font-size: 14px;
+          }
+      
+          .book-image {
+            height: 220px;
+          }
+      
+          .seller-college {
+              font-size: 12px;
+          }
+      
+          .price {
+              font-size: 14px;
+          }
+      
+          .details-button {
+              font-size: 12px;
+              padding: 8px;
+          }
+      }
+
+      

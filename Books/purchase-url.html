@@ -1,0 +1,16 @@
+app.post('/generate-whatsapp-link', (req, res) => {
+  
+    const { name, bookName, phoneNumber } = req.body;
+
+  
+    const message = Hi ${name}, came across your book listing, book name ${bookName} on Learn DU. I am interested in buying. Kindly revert ASAP!;
+
+
+    const encodedMessage = encodeURIComponent(message);
+
+
+    const whatsappLink = https://wa.me/${phoneNumber}?text=${encodedMessage};
+
+    // Send the generated link as the response
+    res.send({ whatsappLink });
+});

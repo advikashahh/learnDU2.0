@@ -1,0 +1,40 @@
+
+
+
+
+
+  
+
+          .container6{
+            display: flex;
+          padding-left: 5%;
+       margin-top: 10px;
+       margin-bottom: 10px;
+      
+          }
+          .container6 a{
+           color: rgb(21, 98, 192);
+           font-size: 1.3rem;
+           text-decoration: none;
+          }
+
+          @media (min-width:00px) and (max-width:600px)
+          { .container6 a{
+            box-shadow: 1px 2px 7px 5px rgb(211, 211, 211);
+            font-size: 1rem;
+            padding: 3px 6px 3px 6px;
+            
+          }}
+
+
+
+
+
+ 
+
+
+
+
+
+
+

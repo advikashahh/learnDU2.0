@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style/form_logo_bar.css">         <link rel="stylesheet" href="../style/form_logo_bar1.css">         <link rel="stylesheet" href="../style/form_logo_bar2.css">
+    <link rel="stylesheet" href="../style/common-pyq.css">      <link rel="stylesheet" href="../style/common-pyq2.css">      <link rel="stylesheet" href="../style/common-pyq3.css">
+    <link rel="stylesheet" href="../style/common.css">  <link rel="stylesheet" href="../style/common2.css">  <link rel="stylesheet" href="../style/common3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Listing</title>
+
+
+</head>
+<body>
+
+
+<!-- ////////////////navbar////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="navigation-bar" id="navigationBar">
+  <a id="headlogo" href="../index"> <div class="logo">
+      <img src="../img/logomain.png" alt="Logo">
+  </div> </a>
+  <div class="menu">
+      <ul>
+          <a href="../index"><li>Home</li></a>
+          <a href="buy" ><li>Buy Book</li></a>
+          <a href="buy-sell" ><li>List Book</li></a>
+          <a href="my-listing" ><li>My Listing</li></a>
+          <a href="../contact_us"><li>Contact Us</li></a>
+          <a href="../login"><li>Login</li></a>
+      </ul>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+      <ul>
+          <a href="../index"><li class="main-menu-content">Home</li></a>
+          <a href="buy" ><li>Buy Book</li></a>
+          <a href="buy-sell" ><li>List Book</li></a>
+          <a href="my-listing" ><li>My Listing</li></a>
+          <a href="../contact_us"><li>Contact Us</li></a>
+          <a href="../login"><li>Login</li></a>
+      </ul>
+      <div class="box">
+          <div class="icon"><i id="sm-icons" class="bi bi-instagram"></i></div> 
+      </div>
+  </div>
+  <div class="hamburger-icon" id="hamburgerIcon" onclick="toggleMobileMenu()">
+      <div class="l1">&#9776;</div>
+  </div>
+</div> 
+
+
+
+<style>
+
+
+
+</style>
+
+
+
+
+
+
+<style>
+
+.all-category-books{
+        width: 90vw;
+        margin-left: auto;
+      margin-right: auto;
+        display: flex;
+padding: 40px;
+  
+  gap: 40px;
+        border: 2px solid red;
+        margin-top: 100px;
+
+    }
+
+
+
+.book-container {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  
+  
+  
+}
+
+.book-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #cccccc;
+}
+
+.book-details {
+    padding: 10px;
+}
+
+.book-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.seller-college {
+    font-size: 14px;
+    text-align: center;
+}
+
+.details-button {
+    display: flex;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 10px;
+
+    text-decoration: none;
+    border-radius: 5px;
+
+
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-top: 1px solid #ffffff;
+    width: 100%;
+    border-top: 2px solid rgb(210, 210, 210);
+
+
+}
+.price-container a{
+ color: white;
+
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #ffffff;
+    color: red;
+    margin-left: 20px;
+
+
+}
+
+.purchase-button {
+    background-color: #ff5151;
+    width: 60%;
+height: 50px;
+    display: flex;
+justify-content: center;
+align-items: center;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .book-title {
+        font-size: 14px;
+    }
+
+    .book-image {
+      height: 220px;
+    }
+
+    .seller-college {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .details-button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+.delete-card-container{
+
+width: 100vw;
+height: 100vh;
+position: absolute;
+top: 0px;
+z-index: 10;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(0, 0, 0, .8);
+display: none;
+}
+
+.card {
+overflow: hidden;
+position: relative;
+background-color: #ffffff;
+text-align: left;
+border-radius: 0.5rem;
+max-width: 350px;
+padding: 50px 40px;
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+
+
+
+.message {
+margin-top: 0.5rem;
+color: #6B7280;
+font-size: 1.2rem;
+line-height: 1.25rem;
+}
+
+
+.delete-btn {
+display: inline-flex;
+padding: 0.5rem 1rem;
+background-color: #DC2626;
+color: #ffffff;
+font-size: 1rem;
+line-height: 1.5rem;
+font-weight: 500;
+justify-content: center;
+width: 60%;
+border-radius: 0.375rem;
+border-width: 1px;
+border-color: transparent;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+margin-top: 20px;
+border: 2px solid white;
+transition: .1s linear;
+
+
+}
+.delete-btn:hover{
+background-color: white;
+border: 2px solid #DC2626;
+color:#DC2626;;
+}
+
+.cancel {
+display: inline-flex;
+margin-top: 0.75rem;
+padding: 0.5rem 1rem;
+background-color: #ffffff;
+color: #374151;
+font-size: 1rem;
+line-height: 1.5rem;
+font-weight: 500;
+justify-content: center;
+width: 60%;
+border-radius: 0.375rem;
+border: 1px solid #D1D5DB;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+margin-top: 20px;
+}
+.cancel:hover{
+border: 2px solid black;
+}
+
+</style>
+
+
+
+
+
+
+
+<!-- /////////////get-values-from  id="Category-btn-Commerce"//////////// -->
+<div class="all-category-books">
+  
+      
+
+ 
+
+          <div class="book-container">
+              <img src="path/to/image-from-database.jpg" alt="Book Image" class="book-image">
+              <div class="book-details">
+                  <p class="book-title">Classical economics by Adam Smith</p>
+                  <p class="seller-college"><strong>Seller College:</strong> Hansraj</p>
+                  <a href="details-url" class="details-button">More Details</a>
+              </div>
+              <div class="price-container">
+                  <span class="price">₹ 120</span>
+                  <button onclick="showDeleteContainer()">DELETE</button>
+              </div>
+          </div>
+    
+
+
+          <div class="book-container">
+            <img src="path/to/image-from-database.jpg" alt="Book Image" class="book-image">
+            <div class="book-details">
+                <p class="book-title">Classical economics by Adam Smith</p>
+                <p class="seller-college"><strong>Seller College:</strong> Hansraj</p>
+                <a href="details-url" class="details-button">More Details</a>
+            </div>
+            <div class="price-container">
+                <span class="price">₹ 120</span>
+                <button onclick="showDeleteContainer()">DELETE</button>
+            </div>
+        </div>
+
+
+
+
+        <div class="book-container">
+            <img src="path/to/image-from-database.jpg" alt="Book Image" class="book-image">
+            <div class="book-details">
+                <p class="book-title">Classical economics by Adam Smith</p>
+                <p class="seller-college"><strong>Seller College:</strong> Hansraj</p>
+                <a href="details-url" class="details-button">More Details</a>
+            </div>
+            <div class="price-container">
+                <span class="price">₹ 120</span>
+                <button onclick="showDeleteContainer()">DELETE</button>
+            </div>
+        </div>
+
+
+
+    
+
+
+      </div>
+  
+<div id="delete-card-container" class="delete-card-container">
+<div class="card">
+
+  
+ 
+
+         <p class="message">Are you sure you want to delete your listing?</p>
+   
+
+         <button class="delete-btn" type="button">Delete</button>
+         <button class="cancel" type="button" onclick="CancelDeleteContainer()">Cancel</button>
+
+    </div>
+
+</div>
+
+
+
+<script>
+         function showDeleteContainer() {
+    const container = document.getElementById('delete-card-container');
+    container.style.display = 'flex';
+}
+        function CancelDeleteContainer() {
+            const container = document.getElementById('delete-card-container');
+            container.style.display = 'none';
+           
+        }
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+<!-- Book containers will be populated dynamically -->
+<div class="all-category-books" id="all-category-books">
+    <!-- Dynamic content will be inserted here -->
+</div>
+
+<div id="delete-card-container" class="delete-card-container" style="display: none;">
+    <div class="card">
+        <p class="message">Are you sure you want to delete your listing?</p>
+        <button class="delete-btn" type="button" onclick="deleteBook()">Delete</button>
+        <button class="cancel" type="button" onclick="CancelDeleteContainer()">Cancel</button>
+    </div>
+</div>
+
+<script>
+    // Fetch the books from your backend
+    function fetchBooks() {
+        fetch('https://your-backend-url/api/get-book')
+            .then(response => response.json())
+            .then(books => {
+                // Call the function to display books
+                displayBooks(books);
+            })
+            .catch(error => {
+                console.error('Error fetching books:', error);
+            });
+    }
+
+    // Function to display the books dynamically
+    function displayBooks(books) {
+        const booksContainer = document.getElementById('all-category-books');
+        booksContainer.innerHTML = ''; // Clear any existing content
+
+        books.forEach(book => {
+            const bookDiv = document.createElement('div');
+            bookDiv.classList.add('book-container');
+
+            bookDiv.innerHTML = `
+                <img src="uploads/${book.coverPage}" alt="Book Image" class="book-image">
+                <div class="book-details">
+                    <p class="book-title">${book.bookname}</p>
+                    <p class="seller-college"><strong>Seller College:</strong> ${book.college}</p>
+                    <a href="${book.driveLink}" class="details-button">More Details</a>
+                </div>
+                <div class="price-container">
+                    <span class="price">₹ ${book.bookPrice}</span>
+                    <button onclick="showDeleteContainer('${book._id}')">DELETE</button>
+                </div>
+            `;
+            booksContainer.appendChild(bookDiv);
+        });
+    }
+
+    // Show the delete confirmation popup
+    function showDeleteContainer(bookId) {
+        const container = document.getElementById('delete-card-container');
+        container.style.display = 'flex';
+        // Save the book ID to a global variable or data attribute
+        container.setAttribute('data-book-id', bookId);
+    }
+
+    // Hide the delete confirmation popup
+    function CancelDeleteContainer() {
+        const container = document.getElementById('delete-card-container');
+        container.style.display = 'none';
+    }
+
+    // Delete the book from the backend
+    function deleteBook() {
+        const container = document.getElementById('delete-card-container');
+        const bookId = container.getAttribute('data-book-id');  // Get the book ID from the popup
+
+        fetch(`https://your-backend-url/api/delete-book/${bookId}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Book deleted:', data);
+            // Hide the delete confirmation popup
+            CancelDeleteContainer();
+            // Re-fetch the books after deletion
+            fetchBooks();
+        })
+        .catch(error => {
+            console.error('Error deleting book:', error);
+        });
+    }
+
+    // Fetch and display the books on page load
+    window.onload = fetchBooks;
+</script>

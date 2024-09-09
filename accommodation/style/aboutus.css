@@ -1,0 +1,330 @@
+#nav_link3{
+  border-bottom: 2px solid rgb(114, 206, 237);
+
+}
+
+header{
+  padding-bottom: 20px;
+}
+
+header .container1 .box1{
+  width: 100%;
+}
+header .container1 .box1 .l4{
+  margin-top: -15px;
+
+}
+
+.emptychar{
+  color: white;
+}
+
+.container1 .l2{
+  color:rgb(170, 32, 32)}
+
+
+
+@media (min-width:0px) and (max-width:800px)
+{.footer .container1f{
+width: 100vw;}}
+.footer .container2f{
+width: 46vw;
+  }
+
+@media (min-width:0px) and (max-width:800px)
+{.footer .container2f{
+width: 100vw;}}
+
+
+
+.container2{
+  margin-left:4%;
+  margin-right:4%;
+  padding-left: 5%;
+  padding-right: 5%;
+    padding-top: 35px;
+    background-color: rgb(0,0,0,.87);
+    padding-bottom: 35px;
+margin-top: 60px;
+   
+  
+  }
+  
+  @media (min-width:0px) and (max-width:700px)
+  {.container2{
+    margin-left:0%;
+    margin-right:0%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+  
+    
+  }}
+  
+  
+  
+  
+  
+  .container2 .box1 .l1,.container3 .box1 .l1{
+      color:rgb(255, 255, 255);
+      font-size: 35px;
+      font-weight: 450;
+      padding-bottom: 5px;
+      border-bottom: 3px solid rgb(139, 242, 255);
+  }
+  
+  @media (min-width:0px) and (max-width:500px)
+  {.container2 .box1 .l1,.container3 .box1 .l1{
+  font-size: 6.5vw
+   
+  }}
+  
+  .container2 .box1 .l2,.container3 .box1 .l2{
+      font-size: 21px;
+      color: rgb(255, 255, 255);
+      font-weight: 400;
+      margin-top: 10px;
+   
+      
+  }
+  
+  @media (min-width:0px) and (max-width:500px)
+  {.container2 .box1 .l2,.container3 .box1 .l2{
+      color: rgb(224, 224, 224);
+  font-size: 4.5vw;
+   
+  }}
+  
+  
+  /* <!-- ///////////container5_before_our team (heading only)/////////// --> */
+.container5before{
+    margin-top: 80px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      background-color: rgb(219, 248, 255);
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+  
+  
+    }
+    @media (min-width:0px) and (max-width:500px)
+  {.container5before{
+    margin-top: 50px;
+  }}
+      
+  
+  .container5before h2{
+      border-bottom: 4px solid rgb(139, 242, 255); 
+        border-top: 4px solid rgb(139, 242, 255);
+      font-weight: 500;
+      padding:8px 5% 8px 5%;
+      border-top-right-radius: 150px;
+      border-bottom-left-radius: 150px;
+   background: black;
+      font-size: 35px;
+   
+      
+  
+  }
+  @media (min-width:0px) and (max-width:500px)
+  {.container5before h2{
+  font-size:8vw ;
+  padding:8px 10% 8px 10%;}}
+  
+  
+  
+  
+  
+  
+  
+  
+  /* <!-- ///////////our_team img, l1,l2,l3/////////// --> */
+  .container5{
+  
+   padding-left:5%;
+      padding-right: 5%;
+      padding-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: space-between;
+      background-color: rgb(219, 248, 255);
+   
+  }
+  @media (min-width:0px) and (max-width:700px)
+  {.container5 {
+      justify-content: center;}}
+    
+      
+  
+  .container5 .box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 32%;
+      margin-top: 60px;
+      background-color: rgb(0,0,0,.87);  
+      min-width: 290px;
+      padding: 40px 10px 40px 10px;
+      border-radius: 20px;
+     
+  }
+  @media (min-width:0px) and (max-width:700px)
+  {.container5 .box{
+      width: 90%;
+      max-width: 390px;
+   
+  }}
+  .con5top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container5 .box .img{
+        width: 120px;
+      height: 120px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+  
+  
+  @media (min-width:0px) and (max-width:700px)
+  {.container5 .box .img{ 
+      width: 100px;
+      height: 100px;
+     }}
+  
+  .container5 .box .img img{
+    border-radius: 50%;
+      width: 100%;
+      height: 100%;   
+  }
+  
+  
+  .container5 .box .l1{
+      margin-top: 10px;
+      font-size: 27px;
+      font-weight: 500;
+      color: white;
+  }
+  
+  
+  @media (min-width:0px) and (max-width:500px)
+  {.container5 .box .l1{ 
+      font-size: 7vw;
+      color: white;
+    }}
+     
+  
+  
+  .container5 .box .l2{
+      color: rgb(230, 230, 230);
+      font-size: 17px;
+      font-weight: 500;
+  }
+  @media (min-width:0px) and (max-width:700px)
+  {.container5 .box .l2{ 
+      font-size: 14px;
+    }}
+  
+
+  
+  
+  
+  
+  
+  
+  /* ///////////////////our motive/////////// */
+  
+  
+  .container3{
+    background-color: rgba(0, 0, 0);
+    padding-left:7%;
+    padding-right:7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  padding-bottom: 40px;
+    padding-top: 40px;
+    margin-top: 80px;
+  margin-bottom: 80px;
+    
+    
+    }
+    @media (min-width:0px) and (max-width:800px)
+    {.container3{
+      flex-direction: column;
+      margin-top: 50px;
+  margin-bottom: 50px;
+      padding-bottom: 30px;
+    padding-top: 30px;
+      
+    }}
+    
+    
+    .container3 .box{
+      width:30%;
+      min-width: 200px;
+      max-width: 290px;
+      min-height:240px;
+      padding:1% 1.5% 1% 1.5%;
+      border-top-left-radius: 80px;
+      border-bottom-right-radius:180px;
+      background-color:rgb(139, 242, 255); 
+     
+    }
+    
+    @media (min-width:0px) and (max-width:800px)
+    {.container3 .box{
+     width: 100%;
+     margin-top: 20px;
+     padding: 1% 2% 1% 2%;
+    
+      
+    }}
+    
+  
+    
+    .container3 .box .l1{
+      display: flex;
+      justify-content:center;
+      margin-right: 40px;
+      font-size: 20px;
+      font-weight: 550;
+      margin-top: 10px;
+    
+    
+      
+    }
+    
+    @media (min-width:0px) and (max-width:500px)
+    {.container3 .box .l1{
+    font-size: 5vw;
+    
+    
+    }}
+    
+    .container3 .box .l2{
+      padding: 7px 5% 7px 5%;
+      font-size: 17px;
+      font-weight: 400;
+      background-color: white;
+      border: 7px solid rgb(139, 242, 255); 
+      margin-bottom: 30px;
+    
+      
+    }
+    
+    @media (min-width:0px) and (max-width:500px)
+    {.container3 .box .l2{
+    
+    font-size: 4vw;
+    
+    }}
+    
+  

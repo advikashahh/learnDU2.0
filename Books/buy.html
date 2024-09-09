@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/form_logo_bar.css">
+    <link rel="stylesheet" href="../style/form_logo_bar1.css">
+    <link rel="stylesheet" href="../style/form_logo_bar2.css">
+    <link rel="stylesheet" href="../style/common-pyq.css">
+    <link rel="stylesheet" href="../style/common-pyq2.css">
+    <link rel="stylesheet" href="../style/common-pyq3.css">
+    <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/common2.css">
+    <link rel="stylesheet" href="../style/common3.css">
+    <link rel="stylesheet" href="buy.css">
+    <title>Book Listing</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navigation-bar" id="navigationBar">
+        <a id="headlogo" href="../index">
+            <div class="logo">
+                <img src="../img/logomain.png" alt="Logo">
+            </div>
+        </a>
+        <div class="menu">
+            <ul>
+                <a href="../index"><li>Home</li></a>
+                <a href="buy"><li>Buy Book</li></a>
+                <a href="buy-sell"><li>List Book</li></a>
+                <a href="my-listing"><li>My Listing</li></a>
+                <a href="../contact_us"><li>Contact Us</li></a>
+                <a href="../login"><li>Login</li></a>
+            </ul>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <a href="../index"><li class="main-menu-content">Home</li></a>
+                <a href="buy"><li>Buy Book</li></a>
+                <a href="buy-sell"><li>List Book</li></a>
+                <a href="my-listing"><li>My Listing</li></a>
+                <a href="../contact_us"><li>Contact Us</li></a>
+                <a href="../login"><li>Login</li></a>
+            </ul>
+            <div class="box">
+                <div class="icon"><i id="sm-icons" class="bi bi-instagram"></i></div>
+            </div>
+        </div>
+        <div class="hamburger-icon" id="hamburgerIcon" onclick="toggleMobileMenu()">
+            <div class="l1">&#9776;</div>
+        </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <div class="all-Category-btn">
+            <div class="all-Category-btn-sub">
+                <label class="radio-label">
+                    <input type="radio" name="category" class="radio-button" id="Category-btn-Commerce" onclick="showOptions('commerce')" required>
+                    <span class="radio-text">Commerce</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="category" class="radio-button" id="Category-btn-Humanities" onclick="showOptions('humanities')">
+                    <span class="radio-text">Humanities</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="category" class="radio-button" id="Category-btn-Science" onclick="showOptions('science')">
+                    <span class="radio-text">Science</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="category" class="radio-button" id="Category-btn-Others" onclick="showOptions('others')">
+                    <span class="radio-text">Others</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="all-options-btn-container">
+            <!-- Options for each category -->
+            <div id="commerce" class="option-container" style="display: none;">
+                <label>
+                    <input type="radio" id="commerce-option-1" class="option-container-radio-btn" name="commerce-option" value="Option 1" onclick="showSubjects('commerceOption1')">
+                    <span class="option-radio-text">B.Com. (Hons.)</span>
+                </label>
+                <label>
+                    <input type="radio" id="commerce-option-2" class="option-container-radio-btn" name="commerce-option" value="Option 2" onclick="showSubjects('commerceOption2')">
+                    <span class="option-radio-text">Option 2</span>
+                </label>
+            </div>
+            <!-- Repeat for other categories like humanities, science, others -->
+        </div>
+
+        <!-- Subject Options for each category-option combination -->
+        <div id="commerceOption1" class="subject-container" style="display: none;">
+            <label>
+                <input type="radio" id="commerceOption1-Subject-1" class="subject-container-radio-btn" name="commerceOption1-subject" value="Subject 1" onclick="selectSubject(this)"> Subject 1
+            </label>
+            <label>
+                <input type="radio" id="commerceOption1-Subject-2" class="subject-container-radio-btn" name="commerceOption1-subject" value="Subject 2" onclick="selectSubject(this)"> Subject 2
+            </label>
+        </div>
+        <!-- Repeat for other subject containers -->
+    </div>
+
+    <!-- Book Display -->
+    <div id="bookDisplay" class="category-container" style="display: none;">
+        <!-- Books will be dynamically populated here -->
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to show options based on category
+        function showOptions(category) {
+            const optionContainers = document.getElementsByClassName('option-container');
+            for (let i = 0; i < optionContainers.length; i++) {
+                optionContainers[i].style.display = 'none';
+            }
+            const selectedOption = document.getElementById(category);
+            if (selectedOption) {
+                selectedOption.style.display = 'flex';
+            }
+        }
+
+        // Function to show subjects based on selected option
+        function showSubjects(option) {
+            const subjectContainers = document.getElementsByClassName('subject-container');
+            for (let i = 0; i < subjectContainers.length; i++) {
+                subjectContainers[i].style.display = 'none';
+            }
+            const selectedSubjectContainer = document.getElementById(option);
+            if (selectedSubjectContainer) {
+                selectedSubjectContainer.style.display = 'flex';
+            }
+        }
+
+        // Fetch and display books based on selected category, option, and subject
+        // Fetch and display books based on selected category, option, and subject
+function fetchAndDisplayBooks(category, option, subject) {
+    if (!subject) {
+        console.error('Subject is undefined');
+        return;
+    }
+    
+    const url = `http://localhost:4001/api/get-book?category=${category}&option=${option}&subject=${subject}`;
+    
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(books => {
+            const bookDisplay = document.getElementById('bookDisplay');
+            bookDisplay.innerHTML = ''; // Clear previous content
+            
+            if (books.length > 0) {
+                books.forEach(book => {
+                    const bookContainer = document.createElement('div');
+                    bookContainer.className = 'book-container';
+
+                    const bookImage = document.createElement('img');
+                    bookImage.src = book.coverPage;
+                    bookImage.alt = 'Book Image';
+                    bookImage.className = 'book-image';
+
+                    const bookDetails = document.createElement('div');
+                    bookDetails.className = 'book-details';
+
+                    const bookTitle = document.createElement('p');
+                    bookTitle.className = 'book-title';
+                    bookTitle.textContent = book.bookname;
+
+                    const bookCollege = document.createElement('p');
+                    bookCollege.innerHTML = `<strong>Seller College:</strong> ${book.college}`;
+
+                    const detailsButton = document.createElement('a');
+                    detailsButton.href = book.driveLink;
+                    detailsButton.className = 'details-button';
+                    detailsButton.textContent = 'More Details';
+
+                    bookDetails.appendChild(bookTitle);
+                    bookDetails.appendChild(bookCollege);
+                    bookDetails.appendChild(detailsButton);
+
+                    const priceContainer = document.createElement('div');
+                    priceContainer.className = 'price-container';
+
+                    const price = document.createElement('span');
+                    price.className = 'price';
+                    price.textContent = `₹${book.bookPrice}`;
+
+                    const purchaseButton = document.createElement('a');
+                    purchaseButton.href = `mailto:${book.sellerEmail}?subject=Interested in your book listing`;
+                    purchaseButton.className = 'purchase-button';
+                    purchaseButton.textContent = 'Buy Now';
+
+                    priceContainer.appendChild(price);
+                    priceContainer.appendChild(purchaseButton);
+
+                    bookContainer.appendChild(bookImage);
+                    bookContainer.appendChild(bookDetails);
+                    bookContainer.appendChild(priceContainer);
+
+                    bookDisplay.appendChild(bookContainer);
+                });
+
+                bookDisplay.style.display = 'flex';
+            } else {
+                bookDisplay.style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching books:', error);
+        });
+}
+
+
+        // Function to handle subject selection
+        function selectSubject(radioBtn) {
+            const category = document.querySelector('input[name="category"]:checked').id.replace('Category-btn-', '').toLowerCase();
+            const option = radioBtn.closest('.subject-container').id;
+            const subject = radioBtn.value;
+            fetchAndDisplayBooks(category, option, subject);
+        }
+
+        // Initialize the page after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            const radioButtons = document.querySelectorAll('.radio-button');
+            radioButtons.forEach(button => {
+                button.addEventListener('change', function () {
+                    showOptions(this.id.replace('Category-btn-', '').toLowerCase());
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- 
+
+   // Function to fetch book details from the backend
+      // function fetchBookDetails() {
+      //     fetch('http://localhost:4001/api/submit-book') 
+      //         .then(response => response.json())
+      //         .then(data => {
+      //             // Assuming the backend returns a JSON object with the necessary details
+      //             const { coverPage, bookname, college, bookPrice, driveLink, purchaseUrl, whatsappNumber} = data;
+    
+      //             // Update the HTML elements with the fetched data
+      //             document.getElementById('bookImage').src = coverPage;
+      //             document.getElementById('bookname').textContent = bookname;
+      //             document.getElementById('college').textContent = college;
+      //             document.getElementById('bookPrice').textContent = ₹${bookPrice};
+      //             document.querySelector('.details-button').href = driveLink;
+             
+      //              // Generate the WhatsApp link for the purchase button
+      //              const message = Hi, I'm interested in buying the book "${bookname}" listed for ₹${bookPrice}.;
+      //               const whatsappLink = https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)};
+      //               document.querySelector('.purchase-button').href = whatsappLink;
+      //         })
+      //         .catch(error => {
+      //             console.error('Error fetching book details:', error);
+      //         });
+      // }
+    
+      // // Call the function to fetch and display book details
+      // fetchBookDetails();
+     -->

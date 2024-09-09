@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<meta name="description" content=" Learn DU is a vibrant startup dedicated to supporting Delhi University students throughout their college journey. From study resources to accommodation, we serve Delhi University students with the best learning resources and guidance to enhance their college experience.">
+<meta name="keywords" content="learn du, about learndu, about learn du, learndu founder, learn du founder">
+<link  rel="stylesheet" href="style/form_logo_bar.css"><link  rel="stylesheet" href="style/form_logo_bar2.css"><link  rel="stylesheet" href="style/form_logo_bar3.css">
+<link  rel="stylesheet" href="style/common.css"><link  rel="stylesheet" href="style/common2.css"><link  rel="stylesheet" href="style/common3.css">
+
+
+    <title>About Us - Learn DU</title>
+
+
+
+    <!-- ////////////////navbar////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <div class="navigation-bar" id="navigationBar">
+      <a id="headlogo" href="index"> <div class="logo">
+           <img src="img/logomain.png" alt="Logo">
+       </div> </a>
+       <div class="menu">
+           <ul>
+               <a  href="index"><li>Home</li></a>
+               <a  href="about_us"><li>About Us</li></a>
+              <a href="#" class="services-dropdown" > <li >Services</li></a>
+              <a  href="du_study_material"><li>Resources</li></a>  
+           
+              
+      
+              
+   
+              <div class="dorodown-lists" >
+               <a class="bs-dm" target="_blank" id="tourtravels" href="Books/buy-sell"> <li>Buy/Sell Books</li></a>
+                  <a class="bs-dm" target="_blank" id="tourtravels" href="accommodation/index"> <li>Accommodation</li></a>
+                  <a  class="bs-dm" target="_blank" id="visapplication" href="laundry/index"><li>Laundry</li></a>
+                   <a class="bs-dm" id="workpermit" href="tiffin_service/index"><li>Tiffin Service</li></a>
+                 
+                   
+     </div>
+
+   
+          
+            
+               <a  href="contact_us"><li>Contact Us</li></a>
+           
+               
+           
+           
+           </ul>
+       </div>
+       <div class="mobile-menu" id="mobileMenu" >
+           <ul>
+               <a href="index"><li class="main-menu-content">Home</li></a>
+               <a  href="about_us"><li class="main-menu-content">About Us</li></a>
+               <a  href="du_study_material"><li class="main-menu-content">Resources</li></a>
+              <a href=""> <li class="main-menu-content">Services  </li></a>
+              <a target="_blank" class="ss-dm" href="Books/buy-sell"> <li class="ss-services-menu">Buy/Sell Books →</li></a>
+              <a target="_blank" class="ss-dm" href="accommodation/index"> <li class="ss-services-menu">Accommodation →</li></a>
+              <a target="_blank" class="ss-dm" href="laundry/index"> <li class="ss-services-menu">Laundry →</li></a>
+              <a target="_blank" class="ss-dm" href="tiffin_service/index"><li class="ss-services-menu">Tiffin Service →</li></a>
+              <a href="contact_us"> <li class="main-menu-content">Contact Us</li></a>
+
+              <a > <li id="loginBtn" class="main-menu-content">Login</li></a>
+              
+       
+           
+           </ul>
+           <div class="box">
+<div class="icon"><i id="sm-icons" class="bi bi-instagram"></i></div> 
+
+           </div>
+       </div>
+       <div class="hamburger-icon" id="hamburgerIcon" onclick="toggleMobileMenu()">
+           <div class="l1">&#9776;</div>
+       </div>
+       
+   </div> 
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+            font-family: "Nunito", sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+  margin-top: 80px;
+        }
+        @media (max-width: 1000px) {
+          .container {
+            margin-top: 0px;
+            }}
+
+        header {
+            background-color: #FFA500; /* Orange color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .content h2 {
+            color: #FFA500;
+            font-size: 3em;
+        }
+
+        .content p {
+            font-size: 1.4em;
+            line-height: 1.6;
+        }
+
+        .contact {
+            margin: 20px 0;
+        }
+
+        .contact h3 {
+            font-size: 1.5em;
+            color: #FFA500;
+        }
+
+        .contact p {
+            font-size: 1.4em;
+        }
+
+        .mission {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-left: 5px solid #FFA500;
+        }
+
+        .mission h2 {
+            color: #FFA500;
+            font-size: 2em;
+        }
+
+        .mission p {
+            font-size: 1.4em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content h2,
+            .mission h2 {
+                font-size: 2.7em;
+            }
+
+            .content p,
+     
+            .mission p {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .content h2,
+            .mission h2 {
+                font-size: 2.5em;
+            }
+
+            .content p,
+           
+            .mission p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+
+    <div class="container">
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Welcome to Learn DU, a vibrant startup dedicated to supporting Delhi University students throughout their college journey. From study resources to accommodation, we serve Delhi University students with the best learning resources and guidance to enhance their college experience.</p>
+            <p>Our goal is to provide a comprehensive platform where students can find everything they need, from past year question papers (PYQs) and detailed notes to solutions and reference materials. We understand the challenges that come with academic life and aim to alleviate some of that stress by offering reliable, accessible resources.</p>
+
+            <p>At Learn DU, we believe in the power of collaboration and shared knowledge. Our dedicated team works tirelessly to curate and create high-quality content that meets the diverse needs of our student community. We are passionate about empowering students to achieve their academic and personal goals, and we continuously strive to improve and expand our offerings.</p>
+        </div>
+
+     
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission at Learn DU is to help Delhi University students excel in their academic pursuits and make the most of their college journey. We are committed to providing them with the best resources and guidance to achieve their goals. By offering comprehensive study materials, insightful notes, and practical solutions, we aim to make learning an enriching and enjoyable experience.</p>
+            <p>We strive to create an inclusive and supportive community where every student feels valued and encouraged. Our mission is to bridge the gap between academic challenges and success, ensuring that students have access to the tools and support they need to thrive. Whether it's through our study resources, accommodation assistance, or community-building initiatives, we are dedicated to enhancing the overall college experience for every Delhi University student.</p>
+
+        </div>
+
+     
+
+
+
+    </div>
+</body>
+
+
+<div id="footerContainer">
+
+</div>
+
+<script>
+    // Fetch the navigation bar HTML content
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            // Inject the HTML content into the navbarContainer div
+            document.getElementById('footerContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error fetching navbar:', error));
+</script>
+
+
+
+    
+<script>
+    
+  // JavaScript code for toggling mobile menu
+  function toggleMobileMenu() {
+      var mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('show-menu');
+  }
+  
+  // JavaScript code to hide mobile menu when scrolling or clicking outside
+  document.addEventListener("DOMContentLoaded", function() {
+      var mobileMenu = document.getElementById('mobileMenu');
+      var container = document.getElementById('container');
+  
+      window.addEventListener("scroll", function() {
+          mobileMenu.classList.remove('show-menu');
+      });
+  
+      container.addEventListener("click", function() {
+          mobileMenu.classList.remove('show-menu');
+      });
+  
+      mobileMenu.addEventListener("click", function() {
+          mobileMenu.classList.remove('show-menu'); // Hide the menu when clicked
+      });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+      // Get references to the elements
+      const servicesDropdown = document.querySelector('.services-dropdown');
+      const dropdownMenu = document.querySelector('.dorodown-lists');
+      const tourTravelsLink = document.getElementById('tourtravels');
+      const visaApplicationLink = document.getElementById('visapplication');
+      const workPermitLink = document.getElementById('workpermit');
+  
+      // Function to show the dropdown menu
+      function showDropdownMenu() {
+          dropdownMenu.style.display = 'flex';
+      }
+  
+      // Function to hide the dropdown menu
+      function hideDropdownMenu() {
+          dropdownMenu.style.display = 'none';
+      }
+  
+      // Event listener to toggle the visibility of the dropdown menu when "Services" link is clicked
+      servicesDropdown.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default action of the link
+          event.stopPropagation(); // Prevent the click event from bubbling up
+          showDropdownMenu();
+      });
+  
+      // Event listener to hide the dropdown menu when any link inside it is clicked
+      tourTravelsLink.addEventListener('click', hideDropdownMenu);
+      visaApplicationLink.addEventListener('click', hideDropdownMenu);
+      workPermitLink.addEventListener('click', hideDropdownMenu);
+  
+      // Event listener to hide the dropdown menu when the user scrolls
+      window.addEventListener('scroll', hideDropdownMenu);
+  
+      // Event listener to hide the dropdown menu when the user clicks anywhere outside of it
+      document.addEventListener('click', function(event) {
+          // Check if the target of the click event is not within the dropdown menu or its parent
+          if (!event.target.closest('.dorodown-lists') && !event.target.closest('.services-dropdown')) {
+              hideDropdownMenu();
+          }
+      });
+  });
+  </script> 
+
+
+
+
+
+</html>
